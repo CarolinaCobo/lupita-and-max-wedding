@@ -8,7 +8,7 @@ export default function Divider() {
         alt={"header image for wedding"}
         width={"200"}
         height={"100"}
-        className=" object-cover flex items-center mt-8"
+        className=" object-cover flex items-center mt-10"
       />
     </div>
   );

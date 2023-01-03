@@ -5,20 +5,20 @@ import { Container } from "./Container";
 export default function Story() {
   return (
     <Container className="mt-16 sm:mt-32 mb-8">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
+      <div className="grid grid-cols-1 gap-y-16 item lg:grid-cols-2 lg:gap-y-12">
         <div className="lg:pl-20">
-          <div className="max-w-md px-2.5  lg:max-w-none ">
+          <div className="max-w-md px-2.5 lg:max-w-none ">
             <Image
               src={"/story-img.jpeg"}
-              alt=""
+              alt="lupi and max"
               width={"800"}
               height={"300"}
-              className="aspect-square rounded-2xl object-cover"
+              className="md:aspect-square rounded-2xl object-cover"
             />
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-800  sm:text-5xl font-greatVibes">
+          <h1 className="text-4xl font-bold text-slate-800  sm:text-5xl font-greatVibes">
             <span className="text-6xl"> Once again, yes</span>
           </h1>
           <div className="mt-6 space-y-7 text-base text-slate-600">

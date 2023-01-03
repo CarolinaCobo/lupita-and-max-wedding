@@ -13,7 +13,7 @@ export function Hero() {
         alt={"header image for wedding"}
         width={"900"}
         height={"300"}
-        className="h-full w-full object-cover lg:-px-8 -px-4"
+        className="h-full w-full object-cover "
       />
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/contacto">Contact</Button>

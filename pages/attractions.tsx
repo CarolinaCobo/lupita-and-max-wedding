@@ -113,13 +113,12 @@ export default function Attractions() {
         </div>
 
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1Mjrh10iekRx6zNtbEmNH5rLbdl37ot0&hl=en&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1Mjrh10iekRx6zNtbEmNH5rLbdl37ot0&ehbc=2E312F"
           width="100%"
           height="100%"
           className="aspect-[5/3] w-full mb-8"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-
         <Divider />
         <Contact />
       </Container>
