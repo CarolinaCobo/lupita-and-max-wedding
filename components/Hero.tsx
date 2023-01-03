@@ -9,7 +9,7 @@ export function Hero() {
     <Container className=" pb-16 text-center">
       <Image
         priority
-        src={"/headerimage.png"}
+        src={"/header.png"}
         alt={"header image for wedding"}
         width={"900"}
         height={"300"}
