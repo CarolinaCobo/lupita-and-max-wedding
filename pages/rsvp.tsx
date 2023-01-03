@@ -9,21 +9,34 @@ import { Container } from "../components/Container";
 import Divider from "../components/Divider";
 import { Contact } from "../components/Contact";
 
-export default function Rsvp() {
-  const radioOptions = [
-    { id: "yes", title: "Yes" },
-    { id: "no", title: "No" },
-  ];
-  const busTimesOptions = [
-    { id: "24:00", title: "24:00" },
-    { id: "01:00", title: "01:00" },
-    { id: "02:00", title: "02:00" },
-    { id: "04:00", title: "04:00" },
-  ];
+const radioOptions = [
+  { id: "yes", title: "Yes" },
+  { id: "no", title: "No" },
+];
+const busTimesOptions = [
+  { id: "24:00", title: "24:00" },
+  { id: "01:00", title: "01:00" },
+  { id: "02:00", title: "02:00" },
+  { id: "04:00", title: "04:00" },
+];
 
+export default function Rsvp() {
   const { register, handleSubmit, reset } = useForm();
 
   const [open, setOpen] = useState(false);
+
+  const onSubmit = async (data: any) => {
+    await fetch("/api/sheet", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    reset();
+  };
 
   return (
     <>
@@ -42,7 +55,7 @@ export default function Rsvp() {
         </div>
 
         <form
-          onSubmit={() => {}}
+          onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="mt-10 gap-y-8 gap-x-6 sm:grid-cols-2 shadow-lg"
         >
@@ -51,17 +64,17 @@ export default function Rsvp() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="col-span-6 sm:col-span-4">
                   <label
-                    htmlFor="first-name"
+                    htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700"
                   >
                     Name
                   </label>
                   <input
-                    {...register("first-name")}
+                    {...register("firstName")}
                     required
                     type="text"
-                    name="first-name"
-                    id="first-name"
+                    name="firstName"
+                    id="firstName"
                     placeholder="John"
                     autoComplete="given-name"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
@@ -69,18 +82,18 @@ export default function Rsvp() {
                 </div>
                 <div className="col-span-6 sm:col-span-4">
                   <label
-                    htmlFor="last-name"
+                    htmlFor="lastName"
                     className="block text-sm font-medium text-gray-700"
                   >
                     Surname
                   </label>
                   <input
-                    {...register("last-name")}
+                    {...register("lastName")}
                     required
                     type="text"
                     placeholder="Smith"
-                    name="last-name"
-                    id="last-name"
+                    name="lastName"
+                    id="lastName"
                     autoComplete="family-name"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
                   />
@@ -95,7 +108,7 @@ export default function Rsvp() {
                   </label>
                   <input
                     {...register("email")}
-                    type="text"
+                    type="email"
                     required
                     name="email"
                     id="email"
@@ -115,8 +128,9 @@ export default function Rsvp() {
                         {radioOptions.map((busOption) => (
                           <div key={busOption.id} className="flex items-center">
                             <input
+                              {...register("busOption")}
                               id={busOption.id}
-                              name="bus-yes-no"
+                              name="busOption"
                               required
                               type="radio"
                               defaultChecked={busOption.id === "yes"}
@@ -146,9 +160,10 @@ export default function Rsvp() {
                           className="flex items-center"
                         >
                           <input
+                            {...register("bustTime")}
                             id={busTimeOption.id}
                             required
-                            name="bus-time"
+                            name="bustTime"
                             type="radio"
                             defaultChecked={busTimeOption.id === "24:00"}
                             className="h-4 w-4 border-gray-300 text-bouquet-600 focus:ring-bouquet-500"
@@ -178,8 +193,9 @@ export default function Rsvp() {
                             className="flex items-center"
                           >
                             <input
+                              {...register("veganMenu")}
                               id={menuOption.id}
-                              name="vegan-yes-no"
+                              name="veganMenu"
                               required
                               type="radio"
                               defaultChecked={menuOption.id === "yes"}
