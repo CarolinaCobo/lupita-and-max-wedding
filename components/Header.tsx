@@ -81,7 +81,7 @@ function MobileNavigation() {
             <MobileNavLink href="/attractions">Attractions</MobileNavLink>
             <MobileNavLink href="/accomodation">Accomodation</MobileNavLink>
             <MobileNavLink href="/honeymoon">Honeymoon</MobileNavLink>
-            <MobileNavLink href="/#contact">Contact</MobileNavLink>
+            <MobileNavLink href="/#contact">Contact</MobileNavLink>d
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>

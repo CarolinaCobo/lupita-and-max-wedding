@@ -8,6 +8,7 @@ export function Hero() {
   return (
     <Container className=" pb-16 text-center">
       <Image
+        priority
         src={"/headerimage.png"}
         alt={"header image for wedding"}
         width={"900"}
