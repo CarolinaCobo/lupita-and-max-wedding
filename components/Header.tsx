@@ -98,7 +98,7 @@ export function Header() {
             <Image
               src={"/logo.svg"}
               alt={"logo"}
-              width={"200"}
+              width={"160"}
               height={"300"}
             />
           </Link>
@@ -109,13 +109,10 @@ export function Header() {
               <NavLink href="/accommodation">Accommodation</NavLink>
               <NavLink href="/honeymoon">Honeymoon</NavLink>
               <NavLink href="/#contact">Contact</NavLink>
-
               <NavLink href="/rsvp"></NavLink>
             </div>
             <div className="flex items-center gap-x-1 md:gap-x-8">
-              <Button className="bg-bouquet-600" href="/rsvp">
-                RSVP
-              </Button>
+              <Button href="/rsvp" name="RSVP" />
               <div className="-mr-1 md:hidden">
                 <MobileNavigation />
               </div>

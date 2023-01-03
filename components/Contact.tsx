@@ -58,7 +58,7 @@ export function Contact() {
                     <dl className="mt-4 text-base text-gray-500">
                       <Link
                         href={`mailto:${person.email}`}
-                        className="flex items-center  text-bouquet-600 hover:text-bouquet-100 hover:underline hover:underline-offset-2"
+                        className="flex items-center  text-bouquet-600 hover:text-bouquet-800 hover:underline hover:underline-offset-2"
                         aria-label="correo"
                       >
                         <HiEnvelope style={{ marginRight: 10 }} />
@@ -66,7 +66,7 @@ export function Contact() {
                       </Link>
                       <Link
                         href={`tel:${person.phone}`}
-                        className="flex items-center text-bouquet-600 hover:text-bouquet-100 hover:underline hover:underline-offset-2 "
+                        className="flex items-center text-bouquet-600 hover:text-bouquet-800 hover:underline hover:underline-offset-2 "
                         aria-label="phone"
                       >
                         <HiPhone style={{ marginRight: 10 }} />
@@ -75,7 +75,7 @@ export function Contact() {
 
                       <Link
                         href={`https://wa.me/${person.whatsapp}`}
-                        className="flex  items-center text-bouquet-600 hover:text-bouquet-100 hover:underline hover:underline-offset-2"
+                        className="flex  items-center text-bouquet-600 hover:text-bouquet-800 hover:underline hover:underline-offset-2"
                         aria-label="Whatsapp number"
                       >
                         <SiWhatsapp style={{ marginRight: 10 }} />

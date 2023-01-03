@@ -14,12 +14,27 @@ export default function EventDetails() {
           <div className="mt-6 space-y-7 text-base text-slate-600">
             <p>
               The church is walkable from any of the accommodations in Nantes
-              city recommended here.
+              city recommended{" "}
+              <Link
+                href="/accommodation"
+                className="text-bouquet-600 hover:text-bouquet-700 font-bold"
+              >
+                {" "}
+                here.
+              </Link>
             </p>
             <p>
               We will rent a bus that will be leaving at 17:00 from Nantes to
               the Château and back from the Château at 04:00. If you would like
-              to come by bus please confirm here to count you in.
+              to come by bus please confirm
+              <Link
+                href="/rsvp"
+                className="text-bouquet-600 hover:text-bouquet-700 font-bold"
+              >
+                {" "}
+                here{" "}
+              </Link>
+              to count you in.
             </p>
           </div>
 
@@ -47,10 +62,8 @@ export default function EventDetails() {
               </h3>
               <Button
                 href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
-                className=" bg-bouquet-500 my-4 text-white"
-              >
-                Directions
-              </Button>
+                name="Directions"
+              />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
               <iframe
@@ -88,10 +101,8 @@ export default function EventDetails() {
               </h3>
               <Button
                 href="https://goo.gl/maps/ioQ3vCxqtce6FZ4aA"
-                className=" bg-bouquet-500 my-4 text-white"
-              >
-                Directions
-              </Button>
+                name="Directions"
+              />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
               <iframe

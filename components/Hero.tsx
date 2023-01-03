@@ -15,14 +15,8 @@ export function Hero() {
         height={"300"}
         className="h-full w-full object-cover "
       />
-      <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/contacto">Contact</Button>
-        <Button
-          href="/#servicios"
-          className=" bg-bouquet-500 bg-boi text-white"
-        >
-          RSVP
-        </Button>
+      <div className="flex justify-center gap-x-6">
+        <Button href="/rsvp" name="RSVP" />
       </div>
     </Container>
   );
