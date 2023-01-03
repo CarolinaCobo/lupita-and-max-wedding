@@ -110,12 +110,7 @@ export default function Acommodation() {
                   <span className="font-bold ">Description: </span>
                   {place.description}
                 </p>
-                <Button
-                  href={place.direction}
-                  className=" bg-bouquet-500 my-4 text-white"
-                >
-                  Directions
-                </Button>
+                <Button href={place.direction} name="Directions" />
               </div>
             </div>
           ))}
