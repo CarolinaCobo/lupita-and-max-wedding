@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { Container } from "./Container";
 import { Button } from "./Button";
 import { NavLink } from "./NavLink";
+import Image from "next/image";
 
 function MobileNavLink({ href, children }: any) {
   return (
@@ -76,14 +77,11 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
-            <MobileNavLink href="/#nuestro-equipo">
-              Nuestro Equipo
-            </MobileNavLink>
-            <MobileNavLink href="https://www.lginmobiliaria.es/">
-              Inmobiliaria
-            </MobileNavLink>
-            <MobileNavLink href="/#prensa">Prensa</MobileNavLink>
+            <MobileNavLink href="/#program">Schedule</MobileNavLink>
+            <MobileNavLink href="/attractions">Attractions</MobileNavLink>
+            <MobileNavLink href="/accomodation">Accomodation</MobileNavLink>
+            <MobileNavLink href="/honeymoon">Honeymoon</MobileNavLink>
+            <MobileNavLink href="/#contact">Contact</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -97,15 +95,22 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex items-center justify-between ">
           <Link href="/" aria-label="Home">
-            Lupita & Max
+            <Image
+              src={"/logo.svg"}
+              alt={"logo"}
+              width={"200"}
+              height={"300"}
+            />
           </Link>
           <div className="flex items-center md:gap-x-12 justify-center">
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="/#program">Schedule</NavLink>
-              <NavLink href="/#attractions">Attractions</NavLink>
-              <NavLink href="/#attractions">Accomodation</NavLink>
-              <NavLink href="/#honeymoon">Honeymoon</NavLink>
-              <NavLink href="/#rsvp"></NavLink>
+              <NavLink href="/attractions">Attractions</NavLink>
+              <NavLink href="/accomodation">Accomodation</NavLink>
+              <NavLink href="/honeymoon">Honeymoon</NavLink>
+              <NavLink href="/#contact">Contact</NavLink>
+
+              <NavLink href="/rsvp"></NavLink>
             </div>
             <div className="flex items-center gap-x-1 md:gap-x-8">
               <Button className="bg-bouquet-600" href="/rsvp">
