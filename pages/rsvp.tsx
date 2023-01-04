@@ -270,7 +270,7 @@ export default function Rsvp() {
             <Modal open={open} setOpen={setOpen} />
           </div>
         </form>
-
+        <Divider />
         <Contact />
       </Container>
     </>
