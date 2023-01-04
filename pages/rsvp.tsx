@@ -93,14 +93,18 @@ export default function Rsvp() {
                     Last Name<span className="text-bouquet-800">*</span>
                   </label>
                   <input
-                    {...(register("lastName"), { required: true })}
+                    {...register("lastName", { required: true })}
                     type="text"
                     placeholder="Smith"
                     name="lastName"
                     id="lastName"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
                   />
+                  {errors.firstName && (
+                    <span className="text-red-600">This field is required</span>
+                  )}
                 </div>
+
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="email"
@@ -109,7 +113,7 @@ export default function Rsvp() {
                     Email address<span className="text-bouquet-800">*</span>
                   </label>
                   <input
-                    {...(register("email"), { required: true })}
+                    {...register("email", { required: true })}
                     type="email"
                     name="email"
                     id="email"
@@ -132,7 +136,7 @@ export default function Rsvp() {
                         {radioOptions.map((busOption) => (
                           <div key={busOption.id} className="flex items-center">
                             <input
-                              {...(register("busOption"), { required: true })}
+                              {...register("busOption", { required: true })}
                               id={busOption.id}
                               name="busOption"
                               type="radio"
