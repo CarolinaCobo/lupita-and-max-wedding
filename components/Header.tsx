@@ -3,20 +3,17 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
-
-const navigation = [
-  { name: "Schedule", href: "/#program" },
-  { name: "Attractions", href: "/attractions" },
-  { name: "Accommodation", href: "/accommodation" },
-  { name: "Honeymoon", href: "/honeymoon" },
-  { name: "Contact", href: "/#contact" },
-];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("Home");
+  const navigation = [
+    { name: "Schedule", href: "/#program" },
+    { name: "Attractions", href: "/attractions" },
+    { name: "Accommodation", href: "/accommodation" },
+    { name: "Honeymoon", href: "/honeymoon" },
+    { name: "Contact", href: "/#contact" },
+  ];
   return (
     <Disclosure as="nav" className="p-4">
       {({ open }) => (
@@ -58,7 +55,7 @@ export default function Header() {
               </div>
               <div className="flex items-center ">
                 <div className="flex-shrink-0">
-                  <Button href="/rsvp" name="RSVP" />
+                  <Button href="/rsvp" name={t("rsvp")} />
                 </div>
               </div>
             </div>

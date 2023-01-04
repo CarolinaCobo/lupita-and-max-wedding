@@ -6,6 +6,7 @@ import EventDetails from "../components/EventDetails";
 import { Contact } from "../components/Contact";
 import Divider from "../components/Divider";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -27,7 +28,17 @@ export default function Home() {
         <EventDetails />
         <Divider />
         <Contact />
+        <Divider />
+        <Footer />
       </main>
     </>
   );
+}
+
+export function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 }
