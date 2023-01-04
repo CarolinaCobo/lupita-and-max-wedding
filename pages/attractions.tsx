@@ -71,7 +71,7 @@ export default function Attractions() {
     <>
       <Header />
       <Divider />
-      <Container className="pb-16 text-left">
+      <Container className="py-16 text-left">
         <div className="lg:order-first lg:row-span-2 ">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
             <span className="text-6xl">Attractions</span>
