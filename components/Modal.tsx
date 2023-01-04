@@ -57,7 +57,7 @@ export function Modal({ open, setOpen }: Modal) {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 sm:mt-6">
+                <div className="flex justify-center gap-x-6">
                   <Button name="Close" onClick={() => setOpen(false)} />
                 </div>
               </Dialog.Panel>

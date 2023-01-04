@@ -5,7 +5,7 @@ import Header from "../components/Header";
 
 const places = [
   {
-    name: "The Jardin des Plantes",
+    name: "Jardin des Plantes",
     link: "https://jardins.nantes.fr/",
     description:
       "With 7 hectares of greenery in the city center, more than 10,000 living species, 800 square meters of greenhouses and more than 50,000 flowers planted each season, the Jardin des Plantes de Nantes, labeled Remarkable Garden, is one of the four major botanical gardens in France.",
@@ -14,7 +14,7 @@ const places = [
     name: "Les Machines de l'Ile ",
     link: "https://www.lesmachines-nantes.fr/en/",
     description:
-      "he visit of the Machines of the Island plunges you into a dreamlike world that Jules Verne and Leonardo da Vinci would certainly have appreciated. The former Nantes shipyard district on the banks of the Loire has been invaded by strange creatures. To discover the three worlds of the Machines de l'île in Nantes, allow half a day. Between the Gallery of Machines, the Carousel of the Marine Worlds, and the Grand Elephant trip, you won't see the hours pass.",
+      "The visit of the Machines of the Island plunges you into a dreamlike world that Jules Verne and Leonardo da Vinci would certainly have appreciated. The former Nantes shipyard district on the banks of the Loire has been invaded by strange creatures. To discover the three worlds of the Machines de l'île in Nantes, allow half a day. Between the Gallery of Machines, the Carousel of the Marine Worlds, and the Grand Elephant trip, you won't see the hours pass.",
   },
   {
     name: "Le Passage Pommeraye",

@@ -29,58 +29,64 @@ async function handler(
     };
   }
 ) {
-  if (req.method === "POST") {
-    const {
-      firstName,
-      lastName,
-      email,
-      busOption,
-      busTime,
-      veganMenu,
-      allergies,
-      message,
-    } = req.body;
+  try {
+    if (req.method === "POST") {
+      const {
+        firstName,
+        lastName,
+        email,
+        busOption,
+        busTime,
+        veganMenu,
+        allergies,
+        message,
+      } = req.body;
 
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: process.env.CLIENT_EMAIL,
-        client_id: process.env.CLIENT_ID,
-        private_key: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      },
-      scopes: [
-        "https://www.googleapis.com/auth/drive",
-        "https://www.googleapis.com/auth/drive.file",
-        "https://www.googleapis.com/auth/spreadsheets",
-      ],
-    });
-
-    const sheets = google.sheets({
-      auth,
-      version: "v4",
-    });
-
-    const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.SPREADSHEET_ID,
-      range: "Sheet1!A1:H1000",
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [
-          [
-            firstName,
-            lastName,
-            email,
-            busOption,
-            busTime,
-            veganMenu,
-            allergies,
-            message,
-          ],
+      const auth = new google.auth.GoogleAuth({
+        credentials: {
+          client_email: process.env.CLIENT_EMAIL,
+          client_id: process.env.CLIENT_ID,
+          private_key: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n"),
+        },
+        scopes: [
+          "https://www.googleapis.com/auth/drive",
+          "https://www.googleapis.com/auth/drive.file",
+          "https://www.googleapis.com/auth/spreadsheets",
         ],
-      },
-    });
-    return res.status(201).json({ message: "Updated successfully", response });
+      });
+
+      const sheets = google.sheets({
+        auth,
+        version: "v4",
+      });
+
+      const response = await sheets.spreadsheets.values.append({
+        spreadsheetId: process.env.SPREADSHEET_ID,
+        range: "Sheet1!A1:H1000",
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+          values: [
+            [
+              firstName,
+              lastName,
+              email,
+              busOption,
+              busTime,
+              veganMenu,
+              allergies,
+              message,
+            ],
+          ],
+        },
+      });
+      return res
+        .status(201)
+        .json({ message: "Updated successfully", response });
+    }
+  } catch (error) {
+    res.status(400).json({ message: "Invalid request" });
+    alert("There was an error please try again or contact us");
   }
-  res.status(400).json({ message: "Invalid request" });
 }
 
 export default handler;

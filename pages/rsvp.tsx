@@ -31,16 +31,21 @@ export default function Rsvp() {
   const [open, setOpen] = useState(false);
 
   const onSubmit = async (data: any) => {
-    await fetch("/api/sheet", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    setOpen(true);
-    reset();
+    try {
+      await fetch("/api/sheet", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      setOpen(true);
+      reset();
+    } catch (error) {
+      setOpen(false);
+      alert("There's been an error, please try again");
+    }
   };
 
   return (
