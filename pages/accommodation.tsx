@@ -2,6 +2,7 @@ import { Button } from "../components/Button";
 import { Contact } from "../components/Contact";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Link from "next/link";
 
@@ -63,7 +64,7 @@ export default function Acommodation() {
     <>
       <Header />
       <Divider />
-      <Container className="py-16 text-left">
+      <Container className="pt-16 text-left">
         <div className="lg:order-first lg:row-span-2 ">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
             <span className="text-6xl">Accommodation</span>
@@ -136,6 +137,8 @@ export default function Acommodation() {
 
         <Divider />
         <Contact />
+        <Divider />
+        <Footer />
       </Container>
     </>
   );
