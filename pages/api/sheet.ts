@@ -9,7 +9,7 @@ async function handler(
       lastName: string;
       email: string;
       busOption: string;
-      bustTime: string;
+      busTime: string;
       veganMenu: string;
       allergies: string;
       message: string;
@@ -35,7 +35,7 @@ async function handler(
       lastName,
       email,
       busOption,
-      bustTime,
+      busTime,
       veganMenu,
       allergies,
       message,
@@ -61,7 +61,7 @@ async function handler(
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.SPREADSHEET_ID,
-      range: "Sheet1!A2:C",
+      range: "Sheet1!A1:H1000",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
@@ -70,7 +70,7 @@ async function handler(
             lastName,
             email,
             busOption,
-            bustTime,
+            busTime,
             veganMenu,
             allergies,
             message,
@@ -78,9 +78,9 @@ async function handler(
         ],
       },
     });
-    res.status(201).json({ message: "It works!", response });
+    return res.status(201).json({ message: "Updated successfully", response });
   }
-  res.status(200).json({ message: "Hey!" });
+  res.status(400).json({ message: "Invalid request" });
 }
 
 export default handler;

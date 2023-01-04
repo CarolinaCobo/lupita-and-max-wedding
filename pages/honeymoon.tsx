@@ -48,7 +48,7 @@ export default function Honeymoon() {
     <>
       <Header />
       <Divider />
-      <Container className="pb-16 text-left">
+      <Container className="pb-16 text-left pt-8">
         <div className="lg:order-first lg:row-span-2 ">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
             <span className="text-6xl">Honeymoon</span>

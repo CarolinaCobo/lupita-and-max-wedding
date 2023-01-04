@@ -9,19 +9,24 @@ import { Container } from "../components/Container";
 import Divider from "../components/Divider";
 import { Contact } from "../components/Contact";
 
-const radioOptions = [
-  { id: "yes", title: "Yes" },
-  { id: "no", title: "No" },
-];
-const busTimesOptions = [
-  { id: "24:00", title: "24:00" },
-  { id: "01:00", title: "01:00" },
-  { id: "02:00", title: "02:00" },
-  { id: "04:00", title: "04:00" },
-];
-
 export default function Rsvp() {
-  const { register, handleSubmit, reset } = useForm();
+  const radioOptions = [
+    { id: "yes", title: "Yes" },
+    { id: "no", title: "No" },
+  ];
+
+  const busTimesOptions = [
+    { id: "24:00", title: "24:00" },
+    { id: "01:00", title: "01:00" },
+    { id: "02:00", title: "02:00" },
+    { id: "04:00", title: "04:00" },
+  ];
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   const [open, setOpen] = useState(false);
 
@@ -34,7 +39,7 @@ export default function Rsvp() {
         "Content-Type": "application/json",
       },
     });
-
+    setOpen(true);
     reset();
   };
 
@@ -50,10 +55,9 @@ export default function Rsvp() {
         <div className="mt-6 space-y-7 text-base text-slate-600">
           <p>
             If you are, please send us the form below filled as soon as
-            possible, if you have any questions please reach out to any of us
+            possible, if you have any questions please reach out
           </p>
         </div>
-
         <form
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
@@ -67,75 +71,80 @@ export default function Rsvp() {
                     htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Name
+                    Name<span className="text-bouquet-800">*</span>
                   </label>
                   <input
-                    {...register("firstName")}
-                    required
+                    {...register("firstName", { required: true })}
                     type="text"
                     name="firstName"
                     id="firstName"
                     placeholder="John"
-                    autoComplete="given-name"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
                   />
+                  {errors.firstName && (
+                    <span className="text-red-600">This field is required</span>
+                  )}
                 </div>
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="lastName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Surname
+                    Last Name<span className="text-bouquet-800">*</span>
                   </label>
                   <input
-                    {...register("lastName")}
-                    required
+                    {...(register("lastName"), { required: true })}
                     type="text"
                     placeholder="Smith"
                     name="lastName"
                     id="lastName"
-                    autoComplete="family-name"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
                   />
                 </div>
-
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Email address
+                    Email address<span className="text-bouquet-800">*</span>
                   </label>
                   <input
-                    {...register("email")}
+                    {...(register("email"), { required: true })}
                     type="email"
-                    required
                     name="email"
                     id="email"
                     autoComplete="email"
                     placeholder="email@email.com"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
                   />
+                  {errors.email && (
+                    <span className="text-red-600">This field is required</span>
+                  )}
                 </div>
                 <div className="col-span-6 sm:col-span-4">
                   <div className="col-span-6 sm:col-span-4 my-2">
                     <p className="block text-sm font-medium text-gray-700 mt-2">
-                      Would you take the bus?
+                      Will you take the bus?
+                      <span className="text-bouquet-800">*</span>
                     </p>
                     <fieldset className="mt-4">
-                      <legend className="sr-only">Notification method</legend>
                       <div className="space-y-2">
                         {radioOptions.map((busOption) => (
                           <div key={busOption.id} className="flex items-center">
                             <input
-                              {...register("busOption")}
+                              {...(register("busOption"), { required: true })}
                               id={busOption.id}
                               name="busOption"
-                              required
                               type="radio"
+                              value={busOption.title}
                               defaultChecked={busOption.id === "yes"}
                               className="h-4 w-4 border-gray-300 text-bouquet-600 focus:ring-bouquet-500"
                             />
+                            {errors.busOption && (
+                              <span className="text-red-600">
+                                This field is required
+                              </span>
+                            )}
                             <label
                               htmlFor={busOption.id}
                               className="ml-3 block text-sm font-medium text-gray-700"
@@ -151,6 +160,7 @@ export default function Rsvp() {
                 <div className="col-span-6 sm:col-span-4">
                   <p className="block text-sm font-medium text-gray-700 mt-2">
                     What time would you like to take the bus back?
+                    <span className="text-bouquet-800">*</span>
                   </p>
                   <fieldset className="mt-4">
                     <div className="space-y-2">
@@ -160,11 +170,11 @@ export default function Rsvp() {
                           className="flex items-center"
                         >
                           <input
-                            {...register("bustTime")}
+                            {...register("busTime", { required: true })}
                             id={busTimeOption.id}
-                            required
-                            name="bustTime"
+                            name="busTime"
                             type="radio"
+                            value={busTimeOption.id}
                             defaultChecked={busTimeOption.id === "24:00"}
                             className="h-4 w-4 border-gray-300 text-bouquet-600 focus:ring-bouquet-500"
                           />
@@ -182,30 +192,26 @@ export default function Rsvp() {
                 <div className="col-span-6 sm:col-span-4">
                   <div className="col-span-6 sm:col-span-4 my-2">
                     <p className="block text-sm font-medium text-gray-700 mt-2">
-                      Would you like the vegan menu?
+                      Vegan menu<span className="text-bouquet-800">*</span>
                     </p>
                     <fieldset className="mt-4">
-                      <legend className="sr-only">Notification method</legend>
                       <div className="space-y-2">
-                        {radioOptions.map((menuOption) => (
-                          <div
-                            key={menuOption.id}
-                            className="flex items-center"
-                          >
+                        {radioOptions.map((veganMenu) => (
+                          <div key={veganMenu.id} className="flex items-center">
                             <input
-                              {...register("veganMenu")}
-                              id={menuOption.id}
+                              {...register("veganMenu", { required: true })}
+                              id={veganMenu.id}
                               name="veganMenu"
-                              required
                               type="radio"
-                              defaultChecked={menuOption.id === "yes"}
+                              value={veganMenu.id}
+                              defaultChecked={veganMenu.id === "yes"}
                               className="h-4 w-4 border-gray-300 text-bouquet-600 focus:ring-bouquet-500"
                             />
                             <label
-                              htmlFor={menuOption.id}
+                              htmlFor={veganMenu.id}
                               className="ml-3 block text-sm font-medium text-gray-700"
                             >
-                              {menuOption.title}
+                              {veganMenu.title}
                             </label>
                           </div>
                         ))}
@@ -213,6 +219,7 @@ export default function Rsvp() {
                     </fieldset>
                   </div>
                 </div>
+
                 <div className="col-span-6 sm:col-span-4 my-2">
                   <label
                     htmlFor="allergies"
@@ -253,7 +260,8 @@ export default function Rsvp() {
                   </div>
                 </div>
               </div>
-              <Button type="submit" name="Send" onClick={() => setOpen(true)} />
+
+              <Button type="submit" name="Send" />
             </div>
             <Modal open={open} setOpen={setOpen} />
           </div>
