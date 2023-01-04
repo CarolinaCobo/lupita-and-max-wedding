@@ -1,7 +1,7 @@
 import { Contact } from "../components/Contact";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 
 const places = [
   {

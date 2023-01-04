@@ -1,12 +1,11 @@
 import Head from "next/head";
-import { Header } from "../components/Header";
+
 import { Hero } from "../components/Hero";
 import Story from "../components/Story";
 import EventDetails from "../components/EventDetails";
-
-import Image from "next/image";
 import { Contact } from "../components/Contact";
 import Divider from "../components/Divider";
+import Header from "../components/Header";
 
 export default function Home() {
   return (

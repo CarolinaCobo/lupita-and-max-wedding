@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../components/Button";
 import { Modal } from "../components/Modal";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
 import { Contact } from "../components/Contact";

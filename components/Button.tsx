@@ -11,14 +11,14 @@ export function Button({ name, href, onClick, type }: Button) {
   return href ? (
     <Link
       href={href}
-      className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-bouquet-500 my-4  hover:bg-bouquet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bouquet-500"
+      className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-bouquet-700 my-4  hover:bg-bouquet-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bouquet-500"
     >
       {name}
     </Link>
   ) : (
     <button
       type={type}
-      className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-bouquet-500 my-4  hover:bg-bouquet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bouquet-500"
+      className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-bouquet-700 my-4  hover:bg-bouquet-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bouquet-500"
       name={name}
       onClick={onClick}
     >

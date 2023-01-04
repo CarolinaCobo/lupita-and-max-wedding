@@ -2,7 +2,7 @@ import { Button } from "../components/Button";
 import { Contact } from "../components/Contact";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import Link from "next/link";
 
 const places = [
