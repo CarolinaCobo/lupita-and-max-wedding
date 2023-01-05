@@ -266,7 +266,7 @@ export default function Rsvp() {
                       name="message"
                       rows={3}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-bouquet-500 focus:ring-bouquet-500 sm:text-sm"
-                      placeholder="Notes/comments"
+                      placeholder={t("notesComments")}
                       defaultValue={""}
                     />
                   </div>
