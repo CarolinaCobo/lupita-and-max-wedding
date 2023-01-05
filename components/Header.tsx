@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/router";
 
 export default function Header() {
   const t = useTranslations("Data");

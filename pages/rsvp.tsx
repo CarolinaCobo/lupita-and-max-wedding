@@ -31,7 +31,7 @@ export default function Rsvp() {
     formState: { errors },
   } = useForm();
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const onSubmit = async (data: any) => {
     try {
