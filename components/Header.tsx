@@ -65,14 +65,11 @@ export default function Header() {
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
               {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className="text-gray-700 hover:bg-bouquet-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  <Link href={item.href}>{item.name}</Link>
-                </Disclosure.Button>
+                <Link key={item.name} href={item.href}>
+                  <Disclosure.Button className="text-gray-700 hover:bg-bouquet-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    {item.name}
+                  </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
