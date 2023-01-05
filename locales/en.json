@@ -1,7 +1,7 @@
 {
   "Data": {
     "schedule": "Schedule",
-    "attractions": "Attractions",
+    "attractions": "Activities",
     "attractionsDescription": "There is plenty of activities in Nantes, here is a list of some things yoou could do while visiting",
     "accommodation": "Accomodation",
     "honeymoon": "Honeymoon",
@@ -12,7 +12,8 @@
     "ourStory3": "Luckily, we always had the support and help from our parents, who made it possible for us to stay together and eventually move in to Dublin. This is one of the many reasons why we’re looking forward to celebrate with our parents and all of you, as you’re so important to the both of us and have made our dream possible one way or another.",
     "scheduleText1": "The church is walkable from any of the accommodations in Nantes city recommended ",
     "here": "here",
-    "scheduleText2": "We will rent a bus that will be leaving at 17:00 from Nantes to the Château and back from the Château at 04:00. If you would like to come by bus please confirm here to count you in.",
+    "scheduleText2": "We will rent a bus that will be leaving at 17:00 from Nantes to the Château and back from the Château at 04:00. If you would like to come by bus please confirm",
+    "scheduleText3": " to count you in.",
     "ceremony": "Ceremony",
     "reception": "Reception",
     "where": "Where",

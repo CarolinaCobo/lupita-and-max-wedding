@@ -54,7 +54,7 @@ export default function EventDetails() {
               </h3>
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("address")}: </span> Pl. Félix
-                Fournier 44036 Nantes, France
+                Fournier 44000 Nantes, France
               </h3>
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("time")}:</span>{" "}

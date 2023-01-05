@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 const places = [
   {
     name: "Jardin des Plantes",
-    link: "https://jardins.nantes.fr/",
+    link: "https://www.parcsetjardins.fr/jardins/719-jardin-des-plantes-de-nantes",
     description:
       "With 7 hectares of greenery in the city center, more than 10,000 living species, 800 square meters of greenhouses and more than 50,000 flowers planted each season, the Jardin des Plantes de Nantes, labeled Remarkable Garden, is one of the four major botanical gardens in France.",
   },
@@ -45,7 +45,7 @@ const places = [
   },
   {
     name: "Le Jardin de l'Ile de Versailles",
-    link: "https://jardins.nantes.fr/En/Garden/Parks-Gardens/Garden-Description.asp?Rcs=120&P=/En/Garden/Parks-Gardens/List/List-Garden-Search.asp",
+    link: "https://www.levoyageanantes.fr/lieux/ile-de-versailles/",
     description:
       "Place of relaxation and leisure since its development, the island of Versailles was originally a marsh. The heart of the island is home to a Japanese-inspired tea garden. It reveals to the walker landscape paintings that are renewed step by step and over the seasons. The landscape recreated and structured by rock gardens, waterfalls and ponds is richly planted with exotic plants such as bamboo, bald cypress, rhododendron, camellia and Japanese cherry trees.",
   },
