@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { HiEnvelope, HiPhone } from "react-icons/hi2";
 import { SiWhatsapp } from "react-icons/si";
+import { useTranslations } from "next-intl";
 
 export const people = [
   {
@@ -25,19 +26,18 @@ export const people = [
 ];
 
 export function Contact() {
+  const t = useTranslations("Data");
+
   return (
     <section id="contact" aria-label="contact">
       <Container className="mt-8 sm:mt-16 mb-8">
         <div className="lg:order-first lg:row-span-2">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
-            <span className="text-6xl">Contact</span>
+            <span className="text-6xl">{t("contact")}</span>
           </h1>
 
           <div className="mt-6 space-y-7 text-base text-slate-600">
-            <p>
-              If you need any help or have any questions please contact any of
-              us
-            </p>
+            <p>{t("contactText")}</p>
           </div>
         </div>
 

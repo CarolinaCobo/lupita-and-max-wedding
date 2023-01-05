@@ -1,8 +1,10 @@
+import { GetStaticPropsContext } from "next";
 import { Contact } from "../components/Contact";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useTranslations } from "next-intl";
 
 const places = [
   {
@@ -68,6 +70,60 @@ const places = [
 ];
 
 export default function Attractions() {
+  const t = useTranslations("Data");
+
+  const places = [
+    {
+      name: "Jardin des Plantes",
+      link: "https://jardins.nantes.fr/",
+      description: t("jardinDesPlantesDescription"),
+    },
+    {
+      name: "Les Machines de l'Ile ",
+      link: "https://www.lesmachines-nantes.fr/en/",
+      description: t("machinesDeLileDescription"),
+    },
+    {
+      name: "Le Passage Pommeraye",
+      link: "http://www.passagepommeraye.fr/",
+      description: t("passagePomeraye"),
+    },
+    {
+      name: "Le Château des Ducs de Bretagne",
+      link: "https://www.chateaunantes.fr/en/",
+      description: t("chateauDesDucsDescription"),
+    },
+    {
+      name: "Le Voyage à Nantes",
+      link: "https://www.levoyageanantes.fr/en/",
+      description: t("voyageDescription"),
+    },
+    {
+      name: "La Cathédrale de Saint-Pierre et Saint-Paul",
+      link: "https://cathedrale-nantes.fr/",
+      description: t("cathedralDescription"),
+    },
+    {
+      name: "Le Jardin de l'Ile de Versailles",
+      link: "https://jardins.nantes.fr/En/Garden/Parks-Gardens/Garden-Description.asp?Rcs=120&P=/En/Garden/Parks-Gardens/List/List-Garden-Search.asp",
+      description: t("jardinDeLilleDescription"),
+    },
+    {
+      name: "Nantes Art Museum",
+      link: "https://museedartsdenantes.nantesmetropole.fr/en/home.html",
+      description: t("artMuseumDescription"),
+    },
+    {
+      name: "Natural History Museum",
+      link: "https://museum.nantesmetropole.fr/version-anglaise.html",
+      description: t("naturalHistoryMuseumDescription"),
+    },
+    {
+      name: "Village of Trentemoult",
+      link: "https://www.levoyageanantes.fr/en/to-see/the-endless-journey/the-districts-of-nantes/trentemoult/",
+      description: t("trentemoultDescription"),
+    },
+  ];
   return (
     <>
       <Header />
@@ -75,13 +131,10 @@ export default function Attractions() {
       <Container className="pt-16 text-left">
         <div className="lg:order-first lg:row-span-2 ">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
-            <span className="text-6xl">Attractions</span>
+            <span className="text-6xl">{t("map")}</span>
           </h1>
           <div className="mt-6 space-y-7 text-base text-slate-600">
-            <p>
-              There is plenty of activities in Nantes, here is a list of some
-              things yoou could do while visiting
-            </p>
+            <p>{t("attractionsDescription")}</p>
           </div>
         </div>
 
@@ -105,12 +158,10 @@ export default function Attractions() {
         </div>
 
         <h2 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
-          <span className="text-6xl">Map</span>
+          <span className="text-6xl">{t("map")}</span>
         </h2>
         <div className="my-6 space-y-7 text-base text-slate-600">
-          <p>
-            To plan better here you have a map with all the places listed above
-          </p>
+          <p>{t("mapText")}</p>
         </div>
 
         <iframe
@@ -127,4 +178,12 @@ export default function Attractions() {
       </Container>
     </>
   );
+}
+
+export function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 }

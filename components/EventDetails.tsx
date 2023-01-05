@@ -1,40 +1,40 @@
 import { Container } from "./Container";
 import Link from "next/link";
 import { Button } from "./Button";
+import { useTranslations } from "next-intl";
 
 export default function EventDetails() {
+  const t = useTranslations("Data");
+
   return (
     <section id="program">
       <Container className="mt-8 sm:mt-16 mb-12">
         <div className="lg:order-first lg:row-span-2">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
-            <span className="text-6xl">Schedule</span>
+            <span className="text-6xl">{t("schedule")}</span>
           </h1>
 
           <div className="mt-6 space-y-7 text-base text-slate-600">
             <p>
-              The church is walkable from any of the accommodations in Nantes
-              city recommended{" "}
+              {t("scheduleText1")}
               <Link
                 href="/accommodation"
                 className="text-bouquet-600 hover:text-bouquet-700 font-bold"
               >
                 {" "}
-                here.
+                {t("here")}
               </Link>
             </p>
             <p>
-              We will rent a bus that will be leaving at 17:00 from Nantes to
-              the Château and back from the Château at 04:00. If you would like
-              to come by bus please confirm
+              {t("scheduleText2")}
               <Link
                 href="/rsvp"
                 className="text-bouquet-600 hover:text-bouquet-700 font-bold"
               >
                 {" "}
-                here{" "}
+                {t("here")}{" "}
               </Link>
-              to count you in.
+              {t("scheduleText3")}
             </p>
           </div>
 
@@ -45,20 +45,20 @@ export default function EventDetails() {
                 className="text-md font-medium text-bouquet-600 hover:underline hover:text-bouquet-500"
               >
                 <h2 className="text-4xl mb-4 font-greatVibes text-bouquet-600">
-                  Ceremony{" "}
+                  {t("ceremony")}{" "}
                 </h2>
               </Link>
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">Where: </span>
+                <span className="font-medium">{t("where")}: </span>
                 Eglise Saint-Nicolas
               </h3>
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">Address: </span> Pl. Félix
+                <span className="font-medium">{t("address")}: </span> Pl. Félix
                 Fournier 44036 Nantes, France
               </h3>
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">Time:</span> Saturday, July 1,
-                2023 at 4:00 PM
+                <span className="font-medium">{t("time")}:</span> Saturday, July
+                1, 2023 at 4:00 PM
               </h3>
               <Button
                 href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
@@ -83,21 +83,21 @@ export default function EventDetails() {
                 className="text-md font-medium text-bouquet-600 hover:underline hover:text-bouquet-500"
               >
                 <h2 className="text-4xl mb-4 text-bouquet-600 font-greatVibes">
-                  Reception
+                  {t("reception")}
                 </h2>
               </Link>
 
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">Where:</span> Allée des Cèdres
-                44360 Château de la Bretonnière
+                <span className="font-medium">{t("where")}:</span> Allée des
+                Cèdres 44360 Château de la Bretonnière
               </h3>
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">Address:</span> Allée des Cèdres
-                44360 Vigneux de Bretagne
+                <span className="font-medium">{t("address")}:</span> Allée des
+                Cèdres 44360 Vigneux de Bretagne
               </h3>
               <h3 className="text-lg  text-gray-900">
-                <span className="font-medium">Time:</span> Saturday, July 1,
-                2023 at 6:00 PM
+                <span className="font-medium">{t("time")}:</span> Saturday, July
+                1, 2023 at 6:00 PM
               </h3>
               <Button
                 href="https://goo.gl/maps/ioQ3vCxqtce6FZ4aA"

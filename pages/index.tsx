@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import { Hero } from "../components/Hero";
 import Story from "../components/Story";
 import EventDetails from "../components/EventDetails";
@@ -7,6 +6,7 @@ import { Contact } from "../components/Contact";
 import Divider from "../components/Divider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { GetStaticPropsContext } from "next";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
   );
 }
 
-export function getStaticProps({ locale }: any) {
+export function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       messages: require(`../locales/${locale}.json`),

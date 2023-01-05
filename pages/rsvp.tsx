@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../components/Button";
@@ -8,11 +6,16 @@ import Header from "../components/Header";
 import { Container } from "../components/Container";
 import Divider from "../components/Divider";
 import { Contact } from "../components/Contact";
+import { useTranslations } from "next-intl";
+import { GetStaticPropsContext } from "next/types";
+import Footer from "../components/Footer";
 
 export default function Rsvp() {
+  const t = useTranslations("Data");
+
   const radioOptions = [
-    { id: "yes", title: "Yes" },
-    { id: "no", title: "No" },
+    { id: "yes", title: t("yes") },
+    { id: "no", title: t("no") },
   ];
 
   const busTimesOptions = [
@@ -44,7 +47,7 @@ export default function Rsvp() {
       reset();
     } catch (error) {
       setOpen(false);
-      alert("There's been an error, please try again");
+      alert(t("error"));
     }
   };
 
@@ -54,14 +57,11 @@ export default function Rsvp() {
       <Container>
         <Divider />
         <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl mt-8">
-          <span className="text-6xl">Are you joining us?</span>
+          <span className="text-6xl">{t("joiningUs")}</span>
         </h1>
 
         <div className="mt-6 space-y-7 text-base text-slate-600">
-          <p>
-            If you are, please send us the form below filled as soon as
-            possible, if you have any questions please reach out
-          </p>
+          <p>{t("joiningUsText")}</p>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -76,7 +76,8 @@ export default function Rsvp() {
                     htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Name<span className="text-bouquet-800">*</span>
+                    {t("name")}
+                    <span className="text-bouquet-800">*</span>
                   </label>
                   <input
                     {...register("firstName", { required: true })}
@@ -95,7 +96,8 @@ export default function Rsvp() {
                     htmlFor="lastName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Last Name<span className="text-bouquet-800">*</span>
+                    {t("surname")}
+                    <span className="text-bouquet-800">*</span>
                   </label>
                   <input
                     {...register("lastName", { required: true })}
@@ -109,13 +111,13 @@ export default function Rsvp() {
                     <span className="text-red-600">This field is required</span>
                   )}
                 </div>
-
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Email address<span className="text-bouquet-800">*</span>
+                    {t("email")}
+                    <span className="text-bouquet-800">*</span>
                   </label>
                   <input
                     {...register("email", { required: true })}
@@ -133,7 +135,7 @@ export default function Rsvp() {
                 <div className="col-span-6 sm:col-span-4">
                   <div className="col-span-6 sm:col-span-4 my-2">
                     <p className="block text-sm font-medium text-gray-700 mt-2">
-                      Will you take the bus?
+                      {t("busOption")}
                       <span className="text-bouquet-800">*</span>
                     </p>
                     <fieldset className="mt-4">
@@ -168,7 +170,7 @@ export default function Rsvp() {
                 </div>
                 <div className="col-span-6 sm:col-span-4">
                   <p className="block text-sm font-medium text-gray-700 mt-2">
-                    What time would you like to take the bus back?
+                    {t("busTime")}
                     <span className="text-bouquet-800">*</span>
                   </p>
                   <fieldset className="mt-4">
@@ -201,7 +203,8 @@ export default function Rsvp() {
                 <div className="col-span-6 sm:col-span-4">
                   <div className="col-span-6 sm:col-span-4 my-2">
                     <p className="block text-sm font-medium text-gray-700 mt-2">
-                      Vegan menu<span className="text-bouquet-800">*</span>
+                      {t("veganMenu")}
+                      <span className="text-bouquet-800">*</span>
                     </p>
                     <fieldset className="mt-4">
                       <div className="space-y-2">
@@ -234,7 +237,7 @@ export default function Rsvp() {
                     htmlFor="allergies"
                     className=" text-sm font-medium text-gray-700"
                   >
-                    Allergies
+                    {t("allergies")}
                   </label>
                   <div className="mt-1">
                     <textarea
@@ -254,7 +257,7 @@ export default function Rsvp() {
                     htmlFor="message"
                     className=" text-sm font-medium text-gray-700"
                   >
-                    Other
+                    {t("other")}
                   </label>
                   <div className="mt-1">
                     <textarea
@@ -269,15 +272,24 @@ export default function Rsvp() {
                   </div>
                 </div>
               </div>
-
-              <Button type="submit" name="Send" />
+              <Button type="submit" name={t("send")} />
             </div>
             <Modal open={open} setOpen={setOpen} />
           </div>
         </form>
         <Divider />
         <Contact />
+        <Divider />
+        <Footer />
       </Container>
     </>
   );
+}
+
+export function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 }

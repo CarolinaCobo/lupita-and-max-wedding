@@ -5,46 +5,50 @@ import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Link from "next/link";
-
-const activities = [
-  {
-    title: "Flights to Japan",
-    link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/250000",
-    image: "./plane.jpeg",
-    amount: "€3000",
-    description: "The first step to get us there!",
-  },
-  {
-    title: "Accommodation",
-    link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/150000",
-    image: "./hotel.jpeg",
-    amount: "€1500",
-    description: "Somewhere to rest while we get ready for more fun in Japan",
-  },
-  {
-    title: "Food for Lupi",
-    link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/40000",
-    image: "./food.jpeg",
-    amount: "€400",
-    description: "Let's face it, if Lupi eats, the holidays will be better",
-  },
-  {
-    title: "Transport",
-    link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/100000",
-    image: "./transport.jpeg",
-    amount: "€1000",
-    description: "We will be moving around a lot!",
-  },
-  {
-    title: "Theme Parks and Cultural attractions",
-    link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/100000",
-    image: "./theme-park.jpeg",
-    amount: "€1000",
-    description: "All the fun is waiting for us!",
-  },
-];
+import { useTranslations } from "next-intl";
+import { GetStaticPropsContext } from "next";
 
 export default function Honeymoon() {
+  const t = useTranslations("Data");
+
+  const activities = [
+    {
+      title: t("flightsTitle"),
+      link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/250000",
+      image: "/plane.jpeg",
+      amount: "€3000",
+      description: t("flightsText"),
+    },
+    {
+      title: t("accommodation"),
+      link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/150000",
+      image: "/hotel.jpeg",
+      amount: "€1500",
+      description: t("accomodationText"),
+    },
+    {
+      title: t("foodForLupi"),
+      link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/40000",
+      image: "/food.jpeg",
+      amount: "€400",
+      description: t("foodForLupiText"),
+    },
+    {
+      title: t("transport"),
+      link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/100000",
+      image: "/transport.jpeg",
+      amount: "€1000",
+      description: t("transportText"),
+    },
+    {
+      title: t("themeParkTitle"),
+      link: "https://www.leetchi.com/en/Contribution/MediumSelection/wOBQeb8Y/100000",
+      image: "/theme-park.jpeg",
+      amount: "€1000",
+      description: t("themeParkText"),
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -55,33 +59,19 @@ export default function Honeymoon() {
             <span className="text-6xl">Honeymoon</span>
           </h1>
           <div className="mt-6 space-y-7 text-base text-slate-600">
-            <p>
-              The greatest gift will undoubtedly be your presence in such an
-              important day for us.
-            </p>
-            <p>
-              But if you still want to help us in our honeymoon this website
-              replaces the traditional wedding gifts for more flexibility when
-              choosing our gifts. As you probably already know we have the long
-              time dream of visiting Japan, so whatever contribution you can
-              make to our dream would make us really happy. In just one click
-              your can make a contribution however big or small.
-            </p>
-            <p>
-              Thank you in advance and we are looking forward to seeing you on
-              the big day!
-            </p>
+            <p>{t("honeymoonText1")}</p>
+            <p>{t("honeymoonText2")}</p>
+            <p>{t("honeymoonText3")}</p>
 
             <div className="mt-6 space-y-7 text-base text-slate-600">
               <p>
-                If you would prefer to access the full website directly you can
-                find it
+                {t("honeymoonText4")}
                 <Link
                   href="https://www.leetchi.com/c/honeymoon-in-japan-maxlupi"
                   className="text-bouquet-600 hover:text-bouquet-700 font-bold"
                 >
                   {" "}
-                  here
+                  {t("here")}
                 </Link>
               </p>
             </div>
@@ -118,7 +108,7 @@ export default function Honeymoon() {
                 </div>
                 <div className="mt-6 flex items-center ">
                   <div className="flex-shrink-0">
-                    <Button href={activity.link} name="Participate" />
+                    <Button href={activity.link} name={t("participate")} />
                   </div>
                 </div>
               </div>
@@ -133,4 +123,12 @@ export default function Honeymoon() {
       </Container>
     </>
   );
+}
+
+export function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 }

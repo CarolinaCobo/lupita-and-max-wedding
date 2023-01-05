@@ -4,16 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 
 export default function Header() {
-  const t = useTranslations("Home");
+  const t = useTranslations("Data");
+  const { locale, locales, route } = useRouter();
+  const otherLocale = locales?.find((cur) => cur !== locale);
+
   const navigation = [
-    { name: "Schedule", href: "/#program" },
-    { name: "Attractions", href: "/attractions" },
-    { name: "Accommodation", href: "/accommodation" },
-    { name: "Honeymoon", href: "/honeymoon" },
-    { name: "Contact", href: "/#contact" },
+    { name: t("schedule"), href: "/#program" },
+    { name: t("attractions"), href: "/attractions" },
+    { name: t("accommodation"), href: "/accommodation" },
+    { name: t("honeymoon"), href: "/honeymoon" },
+    { name: t("contact"), href: "/#contact" },
   ];
+
   return (
     <Disclosure as="nav" className="p-4">
       {({ open }) => (
@@ -44,23 +49,22 @@ export default function Header() {
 
               <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4 flex-end">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="text-gray-700 hover:bg-bouquet-700 hover:text-white px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="flex items-center ">
                 <div className="flex-shrink-0">
-                  <Button href="/rsvp" name={t("rsvp")} />
+                  <Button href="/rsvp" name="RSVP" />
                 </div>
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
               {navigation.map((item) => (
