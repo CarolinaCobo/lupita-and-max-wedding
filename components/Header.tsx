@@ -71,7 +71,7 @@ export default function Header() {
                   href={item.href}
                   className="text-gray-700 hover:bg-bouquet-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  {item.name}
+                  <Link href={item.href}>{item.name}</Link>
                 </Disclosure.Button>
               ))}
             </div>

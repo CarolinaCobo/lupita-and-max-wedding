@@ -67,7 +67,7 @@ export default function Acommodation() {
             <span className="text-6xl">{t("accommodation")}</span>
           </h1>
           <div className="mt-6 space-y-7 text-base text-slate-600">
-            <p>{t("attractionsDescription")}</p>
+            <p>{t("accommodationText")}</p>
           </div>
         </div>
 
