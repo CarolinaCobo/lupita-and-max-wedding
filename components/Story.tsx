@@ -11,7 +11,7 @@ export default function Story() {
         <div className="lg:pl-20">
           <div className="max-w-md px-2.5 lg:max-w-none ">
             <Image
-              src={"/story-img.jpeg"}
+              src={"/story-img3.jpeg"}
               alt="lupi and max"
               width={"800"}
               height={"300"}

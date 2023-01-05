@@ -24,6 +24,7 @@ export default function Home() {
       <main>
         <Header />
         <Hero />
+        <Divider />
         <Story />
         <Divider />
         <EventDetails />
