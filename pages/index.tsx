@@ -17,7 +17,7 @@ export default function Home() {
           name="description"
           content="Lupita and Max's wedding | 01/07/2023"
         />
-        <meta key="og:image" property="og:image" content="/header.png" />
+        <meta key="og:image" property="og:image" content="/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
