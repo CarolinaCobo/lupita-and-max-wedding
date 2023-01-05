@@ -57,8 +57,8 @@ export default function EventDetails() {
                 Fournier 44036 Nantes, France
               </h3>
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">{t("time")}:</span> Saturday, July
-                1, 2023 at 4:00 PM
+                <span className="font-medium">{t("time")}:</span>{" "}
+                {t("ceremonyTime")}
               </h3>
               <Button
                 href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
@@ -88,16 +88,16 @@ export default function EventDetails() {
               </Link>
 
               <h3 className="text-lg text-gray-900">
-                <span className="font-medium">{t("where")}:</span> Allée des
-                Cèdres 44360 Château de la Bretonnière
+                <span className="font-medium">{t("where")}:</span> Château de la
+                Bretonnière
               </h3>
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("address")}:</span> Allée des
                 Cèdres 44360 Vigneux de Bretagne
               </h3>
               <h3 className="text-lg  text-gray-900">
-                <span className="font-medium">{t("time")}:</span> Saturday, July
-                1, 2023 at 6:00 PM
+                <span className="font-medium">{t("time")}:</span>{" "}
+                {t("receptionTime")}
               </h3>
               <Button
                 href="https://goo.gl/maps/ioQ3vCxqtce6FZ4aA"
