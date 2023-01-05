@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import { Button } from "./Button";
+import { useTranslations } from "next-intl";
 
 type Modal = {
   open: boolean;
@@ -9,6 +10,8 @@ type Modal = {
 };
 
 export function Modal({ open, setOpen }: Modal) {
+  const t = useTranslations("Data");
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -48,17 +51,17 @@ export function Modal({ open, setOpen }: Modal) {
                       as="h3"
                       className="text-lg font-medium leading-6 text-gray-900"
                     >
-                      Thank you for your response
+                      {t("modalThankYou")}
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Looking forward to seeing you!
+                        {t("modalMessage")}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="flex justify-center gap-x-6">
-                  <Button name="Close" onClick={() => setOpen(false)} />
+                  <Button name={t("close")} onClick={() => setOpen(false)} />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

@@ -8,8 +8,6 @@ import { useRouter } from "next/router";
 
 export default function Header() {
   const t = useTranslations("Data");
-  const { locale, locales, route } = useRouter();
-  const otherLocale = locales?.find((cur) => cur !== locale);
 
   const navigation = [
     { name: t("schedule"), href: "/#program" },
