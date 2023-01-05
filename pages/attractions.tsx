@@ -131,7 +131,7 @@ export default function Attractions() {
       <Container className="pt-16 text-left">
         <div className="lg:order-first lg:row-span-2 ">
           <h1 className=" font-bold font-greatVibes text-slate-800 sm:text-5xl">
-            <span className="text-6xl">{t("map")}</span>
+            <span className="text-6xl">{t("attractions")}</span>
           </h1>
           <div className="mt-6 space-y-7 text-base text-slate-600">
             <p>{t("attractionsDescription")}</p>
