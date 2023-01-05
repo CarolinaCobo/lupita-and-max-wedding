@@ -38,8 +38,8 @@ export default function Header() {
                   <Image
                     src={"/logo.svg"}
                     alt={"logo"}
-                    width={"160"}
-                    height={"300"}
+                    width={"80"}
+                    height={"150"}
                   />
                 </Link>
               </div>

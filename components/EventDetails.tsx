@@ -22,7 +22,7 @@ export default function EventDetails() {
                 className="text-bouquet-600 hover:text-bouquet-700 font-bold"
               >
                 {" "}
-                {t("here")}
+                {t("here")}.
               </Link>
             </p>
             <p>
@@ -41,7 +41,7 @@ export default function EventDetails() {
           <div className="mt-12 gap-1 sm:grid-cols-2 md:flex lg:grid  lg:grid-cols-2">
             <div>
               <Link
-                href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
+                href="https://goo.gl/maps/gVMRU9Yc1XPLtnQq6"
                 className="text-md font-medium text-bouquet-600 hover:underline hover:text-bouquet-500"
               >
                 <h2 className="text-4xl mb-4 font-greatVibes text-bouquet-600">
@@ -50,7 +50,7 @@ export default function EventDetails() {
               </Link>
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("where")}: </span>
-                Eglise Saint-Nicolas
+                Basilique Saint-Nicolas
               </h3>
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("address")}: </span> Pl. Félix
@@ -61,13 +61,13 @@ export default function EventDetails() {
                 {t("ceremonyTime")}
               </h3>
               <Button
-                href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
+                href="https://goo.gl/maps/gVMRU9Yc1XPLtnQq6"
                 name={t("directions")}
               />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.0837444635695!2d-1.559978084383041!3d47.21494367916059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eea7b470f58f%3A0x5bf4715bced996a7!2sPl.%20F%C3%A9lix%20Fournier%2C%2044036%20Nantes%2C%20France!5e0!3m2!1sen!2sie!4v1672698469597!5m2!1sen!2sie"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.0743523431993!2d-1.5618679708836476!3d47.21512745628783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eea7ad08ea7d%3A0x32693e797c94e7ee!2sBasilique%20Saint-Nicolas%20de%20Nantes!5e0!3m2!1sen!2sie!4v1672928427159!5m2!1sen!2sie"
                 width="100%"
                 height="100%"
                 loading="lazy"
@@ -86,7 +86,6 @@ export default function EventDetails() {
                   {t("reception")}
                 </h2>
               </Link>
-
               <h3 className="text-lg text-gray-900">
                 <span className="font-medium">{t("where")}:</span> Château de la
                 Bretonnière
