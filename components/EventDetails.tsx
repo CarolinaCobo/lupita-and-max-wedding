@@ -62,7 +62,7 @@ export default function EventDetails() {
               </h3>
               <Button
                 href="https://goo.gl/maps/z5iQqu7WEU9TMS4F6"
-                name="Directions"
+                name={t("directions")}
               />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
@@ -101,7 +101,7 @@ export default function EventDetails() {
               </h3>
               <Button
                 href="https://goo.gl/maps/ioQ3vCxqtce6FZ4aA"
-                name="Directions"
+                name={t("directions")}
               />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
