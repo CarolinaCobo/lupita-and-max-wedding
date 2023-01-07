@@ -5,6 +5,7 @@ import Divider from "../components/Divider";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const places = [
   {
@@ -75,7 +76,7 @@ export default function Attractions() {
   const places = [
     {
       name: "Jardin des Plantes",
-      link: "https://jardins.nantes.fr/",
+      link: "https://www.parcsetjardins.fr/jardins/719-jardin-des-plantes-de-nantes",
       description: t("jardinDesPlantesDescription"),
     },
     {
@@ -145,13 +146,18 @@ export default function Attractions() {
               className="relative flex items-center space-x-3 rounded-lg border bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-bouquet-500 focus-within:ring-offset-2 hover:border-bouquet-400"
             >
               <div className="min-w-0 flex-1">
-                <a href={place.link} className="focus:outline-none">
+                <Link
+                  href={place.link}
+                  className="focus:outline-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <span className="absolute inset-0" aria-hidden="true" />
                   <p className="text-sm font-medium text-bouquet-600">
                     {place.name}
                   </p>
                   <p className=" text-sm text-gray-500">{place.description}</p>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -163,7 +169,6 @@ export default function Attractions() {
         <div className="my-6 space-y-7 text-base text-slate-600">
           <p>{t("mapText")}</p>
         </div>
-
         <iframe
           src="https://www.google.com/maps/d/u/0/embed?mid=1Mjrh10iekRx6zNtbEmNH5rLbdl37ot0&ehbc=2E312F"
           width="100%"

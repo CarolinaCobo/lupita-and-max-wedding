@@ -63,6 +63,8 @@ export default function EventDetails() {
               <Button
                 href="https://goo.gl/maps/gVMRU9Yc1XPLtnQq6"
                 name={t("directions")}
+                target="_blank"
+                rel="noopener noreferrer"
               />
             </div>
             <div className=" sm:contents lg:relative lg:block lg:flex-1">
@@ -81,6 +83,8 @@ export default function EventDetails() {
               <Link
                 href="https://goo.gl/maps/ioQ3vCxqtce6FZ4aA"
                 className="text-md font-medium text-bouquet-600 hover:underline hover:text-bouquet-500"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <h2 className="text-4xl mb-4 text-bouquet-600 font-greatVibes">
                   {t("reception")}

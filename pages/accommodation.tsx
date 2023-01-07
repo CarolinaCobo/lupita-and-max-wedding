@@ -78,13 +78,21 @@ export default function Acommodation() {
               className="relative flex items-center rounded-lg border bg-white px-6 py-5 shadow-sm "
             >
               <div className="min-w-0 flex-1">
-                <Link href={place.link}>
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={place.link}
+                >
                   <p className="text-md font-medium text-bouquet-600">
                     {place.name}
                   </p>
                 </Link>
                 <p className=" text-sm text-slate-600 my-2">
-                  <Link href={`mailto:${place.email}`}>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`mailto:${place.email}`}
+                  >
                     <span className="font-bold ">{t("email")}: </span>
                     {place.email}
                   </Link>
@@ -95,7 +103,11 @@ export default function Acommodation() {
                 </p>
 
                 <p className=" text-sm text-slate-600 my-2">
-                  <Link href={`tel:${place.phone}`}>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`tel:${place.phone}`}
+                  >
                     <span className="font-bold ">{t("phone")}: </span>
                     {place.phone}
                   </Link>
@@ -105,7 +117,12 @@ export default function Acommodation() {
                   <span className="font-bold ">{t("description")}: </span>
                   {place.description}
                 </p>
-                <Button href={place.direction} name="Directions" />
+                <Button
+                  href={place.direction}
+                  name="Directions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
               </div>
             </div>
           ))}

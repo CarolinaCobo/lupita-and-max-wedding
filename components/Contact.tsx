@@ -59,7 +59,9 @@ export function Contact() {
                       <Link
                         href={`mailto:${person.email}`}
                         className="flex items-center  text-bouquet-700 hover:text-bouquet-600 hover:underline hover:underline-offset-2"
-                        aria-label="correo"
+                        aria-label="email"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <HiEnvelope style={{ marginRight: 10 }} />
                         {person.email}
@@ -68,6 +70,8 @@ export function Contact() {
                         href={`tel:${person.phone}`}
                         className="flex items-center text-bouquet-700 hover:text-bouquet-600 hover:underline hover:underline-offset-2 "
                         aria-label="phone"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <HiPhone style={{ marginRight: 10 }} />
                         {person.phone}
@@ -77,6 +81,8 @@ export function Contact() {
                         href={`https://wa.me/${person.whatsapp}`}
                         className="flex  items-center text-bouquet-700 hover:text-bouquet-600 hover:underline hover:underline-offset-2"
                         aria-label="Whatsapp number"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <SiWhatsapp style={{ marginRight: 10 }} />
                         WhatsApp

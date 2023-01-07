@@ -69,9 +69,11 @@ export default function Honeymoon() {
                 <Link
                   href="https://www.leetchi.com/c/honeymoon-in-japan-maxlupi"
                   className="text-bouquet-600 hover:text-bouquet-700 font-bold"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {" "}
-                  {t("here")}
+                  {t("here")}.
                 </Link>
               </p>
             </div>
@@ -108,7 +110,12 @@ export default function Honeymoon() {
                 </div>
                 <div className="mt-6 flex items-center ">
                   <div className="flex-shrink-0">
-                    <Button href={activity.link} name={t("participate")} />
+                    <Button
+                      href={activity.link}
+                      name={t("participate")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
                   </div>
                 </div>
               </div>
